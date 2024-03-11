@@ -1,8 +1,26 @@
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
 using namespace std;
 
-
+int sum(vector<int> arr)
+{
+  int sum = 0;
+  for (int x = 0; x < arr.size(); x++)
+  {
+    sum += arr[x];
+  }
+  return sum;
+}
+int sum_rec(vector<int> arr, int index)
+{
+  if (index >= arr.size())
+  {
+    return 0;
+  }
+  int sum = 0;
+  sum = sum + arr[index] + sum_rec(arr, index + 1);
+  return sum;
+}
 void sel_sort(vector<int> arr)
 {
   int mini = INT_MAX;
@@ -79,6 +97,6 @@ void pow2(int a, int a_ki_power)
   }
   // cout << ans << endl;
 }
-int main(){
-  
+int main()
+{
 }
